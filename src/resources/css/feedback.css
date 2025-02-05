@@ -1,0 +1,13 @@
+.feedback-mode *:hover {
+    outline: 2px dashed #f87171;
+    cursor: pointer;
+}
+
+.feedback-box {
+    position: fixed;
+    z-index: 10000;
+    background: #1f2937;
+    padding: 1rem;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+}
