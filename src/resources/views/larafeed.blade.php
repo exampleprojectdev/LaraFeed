@@ -3,31 +3,56 @@
 @section('title', 'LaraFeed')
 
 @section('content')
-<div class="container mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">LaraFeed</h1>
-    <div class="overflow-x-auto">
-        <table class="table-auto border-separate border-spacing-y-2 border border-gray-300">
-            <thead>
-                <tr>
-                    <th class="border border-gray-300">#</th>
-                    <th class="border border-gray-300">Element</th>
-                    <th class="border border-gray-300">Page URL</th>
-                    <th class="border border-gray-300">Feedback</th>
-                    <th class="border border-gray-300">Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($feedbacks as $feedback)
-                <tr>
-                    <td>{{ $feedback->id }}</td>
-                    <td><img src="{{ $feedback->screenshot }}" alt="Selected Element" style="max-width:200px; border:1px solid;" /></td>
-                    <td>{{ $feedback->page_url }}</td>
-                    <td>{{ $feedback->feedback }}</td>
-                    <td>{{ $feedback->created_at }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+
+
+
+
+
+<div class="flex min-h-screen items-center justify-center bg-white">
+    <div class="p-6 overflow-scroll px-0">
+        <h1 class="text-2xl font-bold mb-4">LaraFeed</h1>
+  <table class="w-full min-w-max table-auto text-left">
+    <thead>
+      <tr>
+        <th class="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
+          <p class="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">#</p>
+        </th>
+        <th class="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
+          <p class="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">Element</p>
+        </th>
+        <th class="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
+          <p class="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">Page URL</p>
+        </th>
+        <th class="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
+          <p class="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">Feedback</p>
+        </th>
+        <th class="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
+          <p class="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">Date</p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+        @foreach ($feedbacks as $feedback)
+      <tr>
+        <td class="p-4 border-b border-blue-gray-50">
+          {{ $feedback->id }}
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <img src="{{ $feedback->screenshot }}" alt="Selected Element" style="max-width:200px; border:1px solid;" />
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          {{ $feedback->page_url }}
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          {{ $feedback->feedback }}
+          </div>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          {{ $feedback->created_at }}
+        </td>
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
 </div>
 @endsection
