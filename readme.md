@@ -22,6 +22,7 @@ composer require exampleproject/larafeed
 ```bash
 php artisan vendor:publish --tag=public
 php artisan vendor:publish --tag=migrations
+php artisan vendor:publish --tag=views
 ```  
 3. Run Migration
 
